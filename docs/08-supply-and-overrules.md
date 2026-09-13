@@ -1,0 +1,31 @@
+# 08 — SUPPLY blanks and overrules
+
+## SUPPLY — ask Jon, not guessed
+
+1. **The three hero strains.** I have used Banana Shack (ape), Permanent Marker (monkey) and Apples & Bananas (raccoon) as the brief lists them. Drive confirms Banana Shack ships on the 1ml Eco-Star and Permanent Marker on the 0.5ml, which is why those colourways are cast the way they are. Apples & Bananas exists on Drive only as a distillate cart. **Is it in the rosin range?** If not, the raccoon is a character without a product at camp, and the third chair needs a different strain.
+2. **The Eco-Star reference photographs.** The brief says supplied. I searched Drive for the device photos and did not find them; the `ECO STARS` and `NEW ECOSTARS` folders hold pack artwork, not device photography. Needed before the prop is modelled.
+3. **The oil reference photograph.** Not found. `Rosin inside.png` on Drive is a "Premium Rosin Inside" badge graphic, not a photograph. Needed before any frame with the window in it.
+4. **Verified proof.** Photographs of the facility, the growers and the rosin press, and the flag seal artwork file. The camp noticeboard has four empty slots waiting for them. Nothing is invented.
+5. **Badaboom web licence.** The supplied TTF has `fsType = 4` (preview and print embedding). Blambot's desktop licence normally does not cover web embedding; please confirm the licence covers self-hosted webfont use before launch. The subset is built and working either way.
+6. **18+ or 21+.** The brief says 18+. The pack lid artwork on Drive reads "21+". The gate is built to 18+ per the brief. Confirm.
+7. **Drive folders.** The brief mentions three folders with 28 approved pack renders and 8 layered Illustrator sources. I found `ecostar-1ml-disp` (9 renders), `ecostar-0.5ml` (13), `live-rosin-1ml-cart` (11) and `Cart Artwork` (8 `.ai` files) under the folder you created this morning. Confirm those are the three, and that everything in them is approved.
+8. **The vehicle.** Not specified. I have gone with a generic open-sided tiered game viewer with a canvas awning, roll bar and a spare on the bonnet. Say if it should be something specific.
+9. **Vercel project name and `jarvis.projects`.** Nothing has been deployed and no Vercel project has been created, per the brief's rule. I need the project name to register before any deploy.
+10. **Analytics vendor and the real stockist route.** Stubs until told.
+
+## OVERRULES — where I departed from the brief, and why
+
+1. **Proof moved from chapter 5 to camp.** The brief puts "the real facility, the real growers, the real rosin press, the flag seal" at chapter 5, but the arc it also gives runs "airborne at golden hour → the reveal → camp", and it locks the camera inside the vehicle. Real photographs cut into a first-person mascot drive break the POV and the tone, and they would land between the biggest hit and the reveal. They pin up at camp as real prints on the noticeboard, beside the range, in plain type, which also obeys the "if it is comic, it is an object" rule. Chapter 5 is airborne, chapter 6 is the reveal.
+2. **The viewer is unresolved, by design.** The brief left this to me. Reasoning in 01: all three cast hands are dark and five-fingered, so an honest shot is ambiguous; the question stays a question; the empty fourth chair at camp turns "which one are you?" into "pick a strain".
+3. **Confirmation by eyeline and mirror, not wing mirror alone.** A wing mirror needs a resolved face. The rear-view mirror tilts and the driver's sunglasses find you, full of sun. The raccoon's unchanged stare and the monkey's turn do the confirming.
+4. **"Get in." moved to the age gate.** In the film you are already in the truck from the first frame, so the line does not fit chapter 1. It is exactly right as the yes button. Chapter 1 closes on `Hold on.` instead.
+5. **"Same couch. Same night. Same nothing." kept, over pre-dawn black.** It is the thing you are leaving, said before the engine catches. It survives.
+6. **No halftone overlays, no speech-balloon UI at all.** The brief offered halftone as one direction to weigh; I have rejected it as an interface layer entirely and kept it only as physical texture (dapple, dust) and on the packs themselves.
+7. **Mud on the lens, once.** Obscuring the frame twice would fight "nothing critical hidden behind animation". One crossing, five percent of the track, wipes clear.
+8. **Image sequences on canvas, not video scrubbing.** Scrubbing `currentTime` on iOS Safari is unreliable. Frame sequences per chapter, lazy-loaded, are the robust route and they make the stills fallback free.
+9. **CSS sticky for the pin, ScrollTrigger for progress.** GSAP's pin-spacer is the usual source of iOS jank; sticky is not. ScrollTrigger still owns progress, refresh and the velocity read. Lenis is not used: it fights native iOS scrolling and reduced motion, and the brief only wanted it if it measurably helped.
+10. **The driver's hands.** The pack has hands in pockets. A driver with hands in pockets is a driver steering with a knee, with one arm out of the window. That is not a change to the character, it is the joke the character was already telling.
+11. **The raccoon's eyes are on you from frame one.** The brief has "one never breaks eye contact". Making it the raccoon, and making it start at the gate, turns the reveal's confirmation into a joke that was running the whole film.
+12. **Frosty plants: yes, as a locked set-dressing asset, in three places.** Your optional note. Modelled once, like the device, and kept out of the cast's frames so it cannot introduce drift. Two of the three appearances are at the edges of the drive; the third is the grow behind camp, which is also the "soil" in SOIL2OIL. Private-use cultivation is legal in South Africa; a plant in the background makes no claim. If generation quality is poor it comes out without touching anything else.
+13. **The age gate remembers "no" for the session only.** "Remembered per device" for a yes is 30 days. A permanent no would lock out someone who mis-tapped on a shared phone. Say if you want it stricter.
+14. **Copy compliance line in the footer.** Added "Not for medical use", echoing the pack. Not in the brief; consistent with it.
