@@ -57,9 +57,13 @@ function Device({
         stroke={INK}
         strokeWidth={Math.max(1, w * 0.06)}
       />
-      {/* the window: the oil, lit */}
-      <circle cx={0} cy={-size / 2 + size * 0.33} r={w * 0.3} fill={`url(#${uid}-rosin)`} filter={`url(#${uid}-glow)`} />
-      <circle cx={0} cy={-size / 2 + size * 0.33} r={w * 0.3} fill="none" stroke={ROSIN_HOT} strokeWidth={w * 0.05} opacity={0.9} />
+      {/* shoulder vents: two arched cutouts under the mouthpiece seam */}
+      <path d={`M ${-w / 2} ${-size / 2 + w * 0.7} q ${w * 0.16} ${w * 0.25} 0 ${w * 0.5}`} fill="none" stroke={INK} strokeWidth={Math.max(1, w * 0.05)} opacity={0.6} />
+      <path d={`M ${w / 2} ${-size / 2 + w * 0.7} q ${-w * 0.16} ${w * 0.25} 0 ${w * 0.5}`} fill="none" stroke={INK} strokeWidth={Math.max(1, w * 0.05)} opacity={0.6} />
+      {/* the window: a circular recessed dish with a rectangular aperture; the oil glows in the aperture */}
+      <circle cx={0} cy={-size / 2 + size * 0.33} r={w * 0.34} fill={colour === 'black' ? '#0e0e0e' : '#d8cdb4'} stroke={INK} strokeWidth={Math.max(1, w * 0.04)} />
+      <rect x={-w * 0.22} y={-size / 2 + size * 0.33 - w * 0.16} width={w * 0.44} height={w * 0.32} rx={w * 0.05} fill={`url(#${uid}-rosin)`} filter={`url(#${uid}-glow)`} />
+      <rect x={-w * 0.22} y={-size / 2 + size * 0.33 - w * 0.16} width={w * 0.44} height={w * 0.32} rx={w * 0.05} fill="none" stroke={ROSIN_HOT} strokeWidth={w * 0.05} opacity={0.9} />
       {/* LED */}
       <ellipse cx={0} cy={-size / 2 + size * 0.47} rx={w * 0.09} ry={w * 0.13} fill={led ? '#ffffff' : colour === 'black' ? '#333' : '#c9bfa8'} />
       {led && <ellipse cx={0} cy={-size / 2 + size * 0.47} rx={w * 0.3} ry={w * 0.36} fill="#ffffff" opacity={0.35} filter={`url(#${uid}-glow)`} />}

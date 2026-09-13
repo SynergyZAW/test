@@ -61,4 +61,4 @@ Found on Drive this session (not yet uploaded to Higgsfield; the upload is the f
 
 - Pack renders: `ecostar-1ml-disp/bananashack.png`, `ecostar-0.5ml/permmarker.png`, `distill-1ml-cart/Apples-Bananas.png` (character and costume reference; the A&B livery is not used).
 - Logo: `Safari Smoke Logo.jpeg` (the acacia-and-sun lockup for the truck door).
-- Still missing: the Eco-Star device photographs and the oil reference photograph. See 08.
+- Device and oil references: supplied by Jon in chat on 13 Sep (black front; natural front, 3/4, side, back; oil cartridge). They need to be dropped into the Drive project folder so they can be uploaded to Higgsfield as reference images for the prop and the window; chat images cannot be pulled into the generator directly.

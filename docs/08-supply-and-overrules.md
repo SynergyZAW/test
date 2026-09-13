@@ -3,8 +3,8 @@
 ## SUPPLY — ask Jon, not guessed
 
 1. **The three hero strains.** I have used Banana Shack (ape), Permanent Marker (monkey) and Apples & Bananas (raccoon) as the brief lists them. Drive confirms Banana Shack ships on the 1ml Eco-Star and Permanent Marker on the 0.5ml, which is why those colourways are cast the way they are. Apples & Bananas exists on Drive only as a distillate cart. **Is it in the rosin range?** If not, the raccoon is a character without a product at camp, and the third chair needs a different strain.
-2. **The Eco-Star reference photographs.** The brief says supplied. I searched Drive for the device photos and did not find them; the `ECO STARS` and `NEW ECOSTARS` folders hold pack artwork, not device photography. Needed before the prop is modelled.
-3. **The oil reference photograph.** Not found. `Rosin inside.png` on Drive is a "Premium Rosin Inside" badge graphic, not a photograph. Needed before any frame with the window in it.
+2. **The Eco-Star reference photographs.** ~~Not found on Drive.~~ **Supplied in chat, 13 Sep.** Black front view; natural front, 3/4, side and back views. Please also drop them into the Drive project folder (`ecostar-1ml-disp` or a new `device-reference` folder) so they can be uploaded to Higgsfield as prop references.
+3. **The oil reference photograph.** **Supplied in chat, 13 Sep.** Clear cartridge, bright translucent gold, large slow bubbles. Matches the brief exactly. Same request: a copy on Drive.
 4. **Verified proof.** Photographs of the facility, the growers and the rosin press, and the flag seal artwork file. The camp noticeboard has four empty slots waiting for them. Nothing is invented.
 5. **Badaboom web licence.** The supplied TTF has `fsType = 4` (preview and print embedding). Blambot's desktop licence normally does not cover web embedding; please confirm the licence covers self-hosted webfont use before launch. The subset is built and working either way.
 6. **18+ or 21+.** The brief says 18+. The pack lid artwork on Drive reads "21+". The gate is built to 18+ per the brief. Confirm.

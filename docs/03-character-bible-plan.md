@@ -52,12 +52,15 @@ Modelled once from the reference photographs, locked, reused in every hand. Neve
 
 - 89 × 22.1 × 16.6 mm. 4.03:1 height to width. Cross-section about 4:3, a gently flattened rounded rectangle. Mild flattening. Soft-edged silhouette.
 - Integrated angled mouthpiece, one piece with the body, shallow scooped duckbill. On black: gloss mouthpiece against matte body.
-- Face, top to bottom: circular recessed window about a third down (the oil, glowing) · small oval LED below it · "Powered by CCELL" small and vertical, low, never legible as copy.
+- Face, top to bottom: a **circular recessed dish** about a third down with a **rectangular window aperture** inside it, through which the chrome cartridge and the oil are visible (the oil glows in the aperture; the dish catches the rim light) · small oval LED below it · "Powered by CCELL" small and vertical, low on the black unit, never legible as copy.
+- Shoulders: **two arched vent cutouts**, one each side, just below the mouthpiece seam. These are the dual air vents and they are the second most recognisable silhouette feature after the window. A horizontal seam separates the mouthpiece from the body.
+- Back: USB-C port mid-body. Base: a separate cap section, the removable battery, fine-grained texture on the natural unit.
+- Reference photographs received from Jon in chat on 13 Sep: black front view, natural front, 3/4, side and back views, and the oil in a clear cartridge. These are the prop references. (The four-device "Powered by CCELL" family image shows a different CCELL body with a rectangular window and is not the Eco-Star; not used.)
 - **Black = 1ml.** Matte black, gloss black mouthpiece, white lettering. **Natural = 0.5ml.** Speckled cream/bone bio-composite with dark flecks that have depth and irregularity, warm-grey base band about the bottom 15%, matte textured, small green mark near the base.
 - Same size, both. The colourway is the format.
 - Three specular behaviours in one object: matte body, gloss mouthpiece, chrome inner cartridge. That contrast is what makes it feel real in hand.
 
-**The oil.** Bright, clean, translucent golden yellow. Cold-pressed oil or a pale lager held to the light. High transparency, high luminosity, faint green cast in the highlights. Refractive: transmission, caustics, a bright rim where glass meets oil, a real glow with anything behind it. Large slow air bubbles as the evidence of viscosity; where the window is on screen long enough, they move, slowly. Backlit at golden hour the window is a lamp. **Never** dark, brown, amber-black, murky, muddy, opaque, red-shifted or syrupy. Every generation with the device in frame is checked against this before it is accepted. The reference photograph is still to be supplied (see 08).
+**The oil.** Bright, clean, translucent golden yellow. Cold-pressed oil or a pale lager held to the light. High transparency, high luminosity, faint green cast in the highlights. Refractive: transmission, caustics, a bright rim where glass meets oil, a real glow with anything behind it. Large slow air bubbles as the evidence of viscosity; where the window is on screen long enough, they move, slowly. Backlit at golden hour the window is a lamp. **Never** dark, brown, amber-black, murky, muddy, opaque, red-shifted or syrupy. Every generation with the device in frame is checked against this before it is accepted. The reference photograph has been supplied (a clear cartridge, bright gold, two large slow bubbles, small dark bubble shadows on the far wall). Match it.
 
 ## Sheet acceptance checklist
 
