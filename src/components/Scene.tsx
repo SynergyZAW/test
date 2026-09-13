@@ -222,12 +222,12 @@ export function Scene({ s, w, h, uid }: Props) {
         )}
       </g>
 
-      {/* FRONT ROW — seat backs */}
+      {/* FRONT ROW — seat backs. Right-hand drive: driver right, passenger left. */}
       <rect x={w * 0.05} y={seatTop} width={w * 0.38} height={h * 0.3} rx={18} fill={INK} />
       <rect x={w * 0.57} y={seatTop} width={w * 0.38} height={h * 0.3} rx={18} fill={INK} />
 
-      {/* DRIVER — fedora, Hawaiian shirt, one arm out of the window. Left front. */}
-      <g transform={`translate(${w * 0.24} ${seatTop})`}>
+      {/* DRIVER — fedora, Hawaiian shirt, one arm out of the window. RIGHT front: South Africa drives on the left. */}
+      <g transform={`translate(${w * 0.76} ${seatTop})`}>
         <path d={`M ${-w * 0.16} ${-h * 0.02} q ${w * 0.16} ${-h * 0.1} ${w * 0.32} 0 Z`} fill={GOLD} stroke={INK} strokeWidth={3} />
         {[[-0.1, 0.03], [-0.03, 0.06], [0.05, 0.02], [0.1, 0.07]].map(([dx, dy], i) => (
           <circle key={i} cx={dx * w} cy={-h * (0.06 - dy)} r={Math.min(w, h) * 0.014} fill={CRIMSON} stroke={INK} strokeWidth={2} />
@@ -237,22 +237,24 @@ export function Scene({ s, w, h, uid }: Props) {
         <path d={`M ${-w * 0.06} ${-h * 0.175} q ${w * 0.06} ${-h * 0.07} ${w * 0.12} 0 Z`} fill={GOLD} stroke={INK} strokeWidth={2} />
         <path d={`M ${w * 0.04} ${-h * 0.2} q ${w * 0.02} ${-h * 0.03} ${w * 0.035} ${-h * 0.005}`} stroke="#2f5d3a" strokeWidth={4} fill="none" />
         {/* arm out of the window, to the left edge, unbothered */}
-        <path d={`M ${-w * 0.14} ${-h * 0.03} q ${-w * 0.1} ${-h * 0.02} ${-w * 0.26} ${h * 0.02 + Math.sin(s.p * 240) * 4 * s.moving}`} stroke={FUR} strokeWidth={Math.max(8, w * 0.02)} fill="none" strokeLinecap="round" />
-        {s.ledDriver && <Device x={w * 0.09} y={-h * 0.14} size={Math.min(w, h) * 0.1} colour="black" led rot={-15} uid={uid} />}
+        <path d={`M ${w * 0.14} ${-h * 0.03} q ${w * 0.1} ${-h * 0.02} ${w * 0.26} ${h * 0.02 + Math.sin(s.p * 240) * 4 * s.moving}`} stroke={FUR} strokeWidth={Math.max(8, w * 0.02)} fill="none" strokeLinecap="round" />
+        {s.ledDriver && <Device x={-w * 0.09} y={-h * 0.14} size={Math.min(w, h) * 0.1} colour="black" led rot={15} uid={uid} />}
         {s.cough > 0 && <rect x={-w * 0.05} y={-h * 0.01} width={w * 0.1} height={h * 0.01} fill={GOLD} opacity={s.cough * 0.6} filter={`url(#${uid}-glow)`} />}
       </g>
 
-      {/* RACCOON — right front, turned round, has not blinked since the gate */}
-      <g transform={`translate(${w * 0.76} ${seatTop})`}>
-        <path d={`M ${-w * 0.15} ${h * 0.02} q ${w * 0.15} ${-h * 0.09} ${w * 0.3} 0 Z`} fill="#4a5a2a" stroke={INK} strokeWidth={3} />
-        <circle cx={0} cy={-h * 0.11} r={Math.min(w, h) * 0.058} fill="#3b352f" />
-        <path d={`M ${-w * 0.05} ${-h * 0.16} l ${-w * 0.02} ${-h * 0.05} l ${w * 0.045} ${h * 0.03} z`} fill="#3b352f" />
-        <path d={`M ${w * 0.05} ${-h * 0.16} l ${w * 0.02} ${-h * 0.05} l ${-w * 0.045} ${h * 0.03} z`} fill="#3b352f" />
-        <rect x={-w * 0.06} y={-h * 0.125} width={w * 0.12} height={h * 0.028} rx={8} fill={INK} />
+      {/* THE RANGER — a rhino in the ranger's kit, riding shotgun. LEFT front. Has not blinked since the gate. */}
+      <g transform={`translate(${w * 0.24} ${seatTop})`}>
+        <path d={`M ${-w * 0.16} ${h * 0.02} q ${w * 0.16} ${-h * 0.1} ${w * 0.32} 0 Z`} fill="#8a6b3c" stroke={INK} strokeWidth={3} />
+        <rect x={-w * 0.05} y={-h * 0.05} width={w * 0.1} height={h * 0.05} rx={4} fill="#6d5430" stroke={INK} strokeWidth={2} />
+        <ellipse cx={0} cy={-h * 0.11} rx={Math.min(w, h) * 0.075} ry={Math.min(w, h) * 0.058} fill="#5a5754" />
+        <path d={`M ${w * 0.055} ${-h * 0.13} l ${w * 0.05} ${-h * 0.09} l ${w * 0.005} ${h * 0.1} z`} fill="#3d3a37" stroke={INK} strokeWidth={2} />
+        <path d={`M ${-w * 0.06} ${-h * 0.15} q ${w * 0.01} ${-h * 0.05} ${w * 0.04} ${-h * 0.03} z`} fill="#5a5754" />
+        <path d={`M ${-w * 0.12} ${-h * 0.16} q ${w * 0.12} ${-h * 0.06} ${w * 0.24} 0 Z`} fill="#8a6b3c" stroke={INK} strokeWidth={3} />
+        <rect x={-w * 0.13} y={-h * 0.165} width={w * 0.26} height={h * 0.014} rx={4} fill="#8a6b3c" stroke={INK} strokeWidth={2} />
         {/* the eyes: on you, the whole film */}
-        <circle cx={-w * 0.022} cy={-h * 0.111} r={3} fill="#fff" />
-        <circle cx={w * 0.022} cy={-h * 0.111} r={3} fill="#fff" />
-        {s.ledRaccoon && <Device x={w * 0.085} y={-h * 0.1} size={Math.min(w, h) * 0.1} colour="black" led rot={12} uid={uid} />}
+        <circle cx={-w * 0.03} cy={-h * 0.115} r={3} fill="#fff" />
+        <circle cx={w * 0.012} cy={-h * 0.115} r={3} fill="#fff" />
+        {s.ledRanger && <Device x={-w * 0.095} y={-h * 0.1} size={Math.min(w, h) * 0.1} colour="black" led rot={-12} uid={uid} />}
       </g>
 
       {/* MUD OVER THE LENS */}

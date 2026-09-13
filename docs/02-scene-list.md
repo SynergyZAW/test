@@ -13,7 +13,7 @@ Every number below is a creative decision and is live in `src/data/chapters.ts` 
 
 Full-screen, ink black, logo, the question. This is the "night in". It is boring on purpose.
 
-- **Copy.** `18 or over?` · body: `Safari Smoke is for adults. South African live rosin. We remember your answer on this device.` · buttons: `Yes. Get in.` / `No` · fail: `Not yet.` `Come back when you are 18. The truck will still be here. Probably in a ditch.`
+- **Copy.** `21 or over?` · body: `Safari Smoke is for adults. South African live rosin. We remember your answer on this device.` · buttons: `Yes. Get in.` / `No` · fail: `Not yet.` `Come back when you are 21. The truck will still be here. Probably in a ditch.`
 - Jon's `Get in.` survives here, as the yes button. It is the one place in the film where you are not yet in the truck.
 - **Analytics.** `page_view`, `age_gate_passed` / `age_gate_failed`.
 
@@ -21,7 +21,7 @@ Full-screen, ink black, logo, the question. This is the "night in". It is boring
 
 - **Objective.** Put the viewer in the back row before anything happens and plant the hand.
 - **Camera.** Back row, wide, eye line at the roll bar. Static: the truck is not running.
-- **Subject and action.** Pre-dawn. The driver's fedora and sunglasses in the mirror, on at 4am. The raccoon in the front-right seat, turned round, already staring at you. Three engine coughs at p 0.02, 0.05, 0.085: a frame shudder and a dashboard flicker each. The oil window in your hand glows gold, the only warm light in the frame. At p 0.075–0.115 you raise the device and take a pull; the LED lights. That white LED and the gold window are the first two lights in the film.
+- **Subject and action.** Pre-dawn. The driver's fedora and sunglasses in the mirror, on at 4am, right-hand seat. The rhino in the ranger's kit in the front-left seat, turned round, already staring at you. Three engine coughs at p 0.02, 0.05, 0.085: a frame shudder and a dashboard flicker each. The oil window in your hand glows gold, the only warm light in the frame. At p 0.075–0.115 you raise the device and take a pull; the LED lights. That white LED and the gold window are the first two lights in the film.
 - **Environment.** Camp gate behind, dark bush, steel-blue sky going gold at the horizon.
 - **Light and colour.** Steel blue, one gold source in your hand, the LED. Silhouettes.
 - **Copy.** `Same couch. Same night. Same nothing.` (0.00–0.07) then, as the engine catches, `Hold on.` (0.085–0.125). "Hold on" is what a driver says, it is a joke because he will not drive well, and it is a scroll instruction.
@@ -33,7 +33,7 @@ Full-screen, ink black, logo, the question. This is the "night in". It is boring
 
 - **Objective.** Establish that the driver should not be driving, and that nobody minds.
 - **Camera.** Locked to the truck. The truck lurches out through the gate.
-- **Subject and action.** Gate post clipped at p 0.155 (lateral jolt, the ranger signboard spins past). Jerry can starts rattling on the bonnet. Switchback left at 0.20, right at 0.245, both taken too fast: the horizon leans 2.5° and the cast slides. Driver: one arm out of the window, hands in pockets, knee on the wheel. Raccoon: unmoved.
+- **Subject and action.** Gate post clipped at p 0.155 (lateral jolt, the ranger signboard spins past). Jerry can starts rattling on the bonnet. Switchback left at 0.20, right at 0.245, both taken too fast: the horizon leans 2.5° and the cast slides. Driver: one arm out of the right-hand window, hands in pockets, knee on the wheel. The ranger: unmoved.
 - **Environment.** Dawn. A hand-painted ranger board at the gate (shapes, a sun disc, no legible words). Acacias approaching. First frosty plant gag: the truck exits past the edge of a grow row and takes a leaf or two on the mirror (optional, see 05).
 - **Light.** Gold horizon, long shadows, black rim.
 - **Copy.** `He said he's driven before.` (0.15–0.26)
@@ -53,10 +53,10 @@ Full-screen, ink black, logo, the question. This is the "night in". It is boring
 
 Three sightings. Each is a passenger handling the chaos their own way, device in hand, mid-hit. No names. The strain is known to the code for analytics only.
 
-### 4a — The starer (p 0.42–0.50) · raccoon · black 1ml
-- **Action.** Termite mound clipped at 0.46. The raccoon has not blinked since the gate. At 0.445–0.485 it raises the black Eco-Star and takes a pull without breaking eye contact with you. LED lights on the draw.
+### 4a — The ranger (p 0.42–0.50) · rhino · black 1ml
+- **Action.** Termite mound clipped at 0.46. The rhino, dressed for the job he is not doing, has not blinked since the gate. At 0.445–0.485 he raises the black Eco-Star and takes a pull without breaking eye contact with you. LED lights on the draw and lands on the horn.
 - **Copy.** `Hasn't blinked since the gate.`
-- **Analytics.** `sighting_viewed {strain: apples-bananas}`
+- **Analytics.** `sighting_viewed {strain: sour-diesel}`
 
 ### 4b — The clinger (p 0.50–0.58) · monkey · natural 0.5ml
 - **Action.** Acacia gone around rather than avoided at 0.53: branches whip across the lens, dapple strobes across the seats. The monkey hangs off the roll bar, feet off the floor, natural device in the free hand, window glowing, mildly interested.
@@ -79,7 +79,7 @@ Three sightings. Each is a passenger handling the chaos their own way, device in
 
 ## 6 — The reveal (p 0.82–1.00)
 
-- **Subject and action.** The dust settles. The low sun rakes across your hand (0.84–0.90) and it is a paw: fur on the top edge, gold rim, five dark fingers around a cream device. Confirmation in order (0.87–0.91): the raccoon does not react, which is now funny in a new way; the monkey turns; the mirror tilts and the driver's sunglasses find you, full of sun. Hold from 0.90 to 1.00. Shake is zero. Nothing moves except the dust settling.
+- **Subject and action.** The dust settles. The low sun rakes across your hand (0.84–0.90) and it is a paw: fur on the top edge, gold rim, five dark fingers around a cream device. Confirmation in order (0.87–0.91): the rhino does not react, which is now funny in a new way; the monkey turns; the mirror tilts and the driver's sunglasses find you, full of sun. Hold from 0.90 to 1.00. Shake is zero. Nothing moves except the dust settling.
 - **Copy.** `Ja. Which one are you?` (0.90 to the end). Alternates if wanted: `Right. Which one are you?` · `Been you the whole time. Which one?` · `Same truck. Which one are you?` The requirement is the question; the recommendation is the shortest.
 - **Motion.** None. This is the one still.
 
@@ -92,7 +92,7 @@ Three sightings. Each is a passenger handling the chaos their own way, device in
 
 ## 8 — Afterglow (normal flow)
 
-- **Content.** Night. The truck parked. Stars. The monkey still in the back row, natural device in hand, LED on. `He's not getting out.` Then the footer: logo, `Made by South Africans for South Africans.`, 18+, not for medical use, keep out of reach of children.
+- **Content.** Night. The truck parked. Stars. The monkey still in the back row, natural device in hand, LED on. `He's not getting out.` Then the footer: logo, `Made by South Africans for South Africans.`, 21+, not for medical use, keep out of reach of children.
 
 ---
 
@@ -100,7 +100,7 @@ Three sightings. Each is a passenger handling the chaos their own way, device in
 
 | Where | Line |
 |---|---|
-| Gate | 18 or over? · Yes. Get in. · No · Not yet. |
+| Gate | 21 or over? · Yes. Get in. · No · Not yet. |
 | 1 | Same couch. Same night. Same nothing. · Hold on. |
 | 2 | He said he's driven before. |
 | 3 | Riverbed. He didn't slow down. |

@@ -17,7 +17,7 @@ Manic, not serene. The road fights back, the kit comes loose, the dust swallows 
 1. **Cough.** Pre-dawn. The engine will not catch. The oil window in your hand is the only warm light in the world.
 2. **Bad start.** It catches. The gate post gets clipped. The first switchback is taken like a dare.
 3. **First real hit.** Dry riverbed at speed. Washboard, then dust. Something lands in the back row. It is a monkey.
-4. **The passengers.** Three sightings. The starer, the clinger, the driver. Product in every hand, no names.
+4. **The passengers.** Three sightings. The ranger, the clinger, the driver. Product in every hand, no names.
 5. **Airborne.** Golden hour. He sees the rise. He speeds up. The truck hangs. Silence.
 6. **The reveal.** Landing. The low sun rakes across your hand. It is a paw. They turn and look at you. Hold. "Ja. Which one are you?"
 7. **Camp.** The only calm frame. The cast in chairs, the range named, the device explained, proof pinned up. Find a stockist.
@@ -25,13 +25,13 @@ Manic, not serene. The road fights back, the kit comes loose, the dust swallows 
 
 ## The POV and the reveal
 
-**The camera is a passenger.** First person, whole film, back row, eye line roughly at the roll bar. The camera never leaves the vehicle. It looks forward over the front seats, which puts the driver's hat, one arm out of the window, and the mirror in every frame, and puts the trail ahead where the sightings arrive from.
+**The camera is a passenger.** First person, whole film, back row, eye line roughly at the roll bar. The camera never leaves the vehicle. It looks forward over the front seats, which puts the driver's hat, one arm out of the window, and the mirror in every frame, and puts the trail ahead where the sightings arrive from. **Right-hand drive.** South Africa drives on the left, so the driver is in the right front seat and his arm hangs out of the right-hand window. The passenger seat is on the left.
 
 **The plant.** Your hand is in the bottom-right of frame from the first shot, holding a natural 0.5ml Eco-Star. It is never hidden. It is always working against a clean read: pre-dawn blue with only the oil window lighting it from below; motion blur on the riverbed; the awning's shade at noon; the mud crossing; backlight at the rise. You bring it up and take a pull twice: once in chapter 1 (the LED and the glowing window are the first light in the film) and once just before the rise. Both pulls are shot so the glow is what you look at, not the fingers.
 
-**The payoff.** Landing compression, dust settles, and the sun is now low and behind the truck. The light rakes across the hand and it is fur. Five fingers, dark, a paw around the cream device. Then the confirmation, in this order over about two scroll-seconds: the raccoon (who has been staring at you the entire film) does not change expression, which is now funny for a different reason; the monkey turns; the driver tilts the mirror and his sunglasses find you. **We never resolve which animal you are.** The mirror is full of sun.
+**The payoff.** Landing compression, dust settles, and the sun is now low and behind the truck. The light rakes across the hand and it is fur. Five fingers, dark, a paw around the cream device. Then the confirmation, in this order over about two scroll-seconds: the rhino (who has been staring at you the entire film) does not change expression, which is now funny for a different reason; the monkey turns; the driver tilts the mirror and his sunglasses find you. **We never resolve which animal you are.** The mirror is full of sun.
 
-**Why unresolved.** All three cast species have dark, five-fingered, hand-like hands. A raccoon paw, a monkey hand and an ape hand read the same at this scale and in this light. So an honest shot of the paw is genuinely ambiguous, and the question "which one are you?" is a real question rather than a rhetorical one. If we resolved it in the mirror, the line would become a statement with a question mark. The camp answers it a second way: three named chairs and one empty one with your device on the arm. Pick a strain, pick who you were.
+**Why unresolved.** The ape and the monkey both have dark, five-fingered, hand-like hands that read the same at this scale and in this light, and the rhino plainly does not, which rules him out and nobody else. So an honest shot of the paw is genuinely ambiguous, and the question "which one are you?" is a real question rather than a rhetorical one. If we resolved it in the mirror, the line would become a statement with a question mark. The camp answers it a second way: three named chairs and one empty one with your device on the arm. Pick a strain, pick who you were.
 
 **The hold.** The reveal is the only beat in the film allowed to be still. The shake system zeroes out, the dust settles, and the frame holds for the last ten percent of the scroll track before the page releases into camp.
 
@@ -39,7 +39,7 @@ Manic, not serene. The road fights back, the kit comes loose, the dust swallows 
 
 ## Which device is in your hand
 
-**Natural, 0.5ml.** Cream on dark fur in raking light is the most legible reveal, the bio-composite carries the eco story without a word, and it means the viewer's format is the one the driver is not using. Black 1ml goes to the driver and the raccoon (stealth animals, dusk LED on a muzzle). Natural to the monkey and you. Both formats in hands from chapter 1 to camp. That is the product demo.
+**Natural, 0.5ml.** Cream on dark fur in raking light is the most legible reveal, the bio-composite carries the eco story without a word, and it means the viewer's format is the one the driver is not using. Black 1ml goes to the driver and the rhino (Banana Shack and Sour Diesel both ship on the 1ml, and a dusk LED on a rhino's muzzle is a shot). Natural to the monkey and you. Both formats in hands from chapter 1 to camp. That is the product demo.
 
 ## How the comic DNA gets into a 3D world
 

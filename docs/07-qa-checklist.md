@@ -38,13 +38,13 @@
 - [ ] Colour contrast audit on gold-on-ink small text (currently used only for labels ≥14px)
 
 ## Compliance
-- [x] 18+ gate, real barrier, remembered per device
+- [x] 21+ gate (per the pack, confirmed by Jon 13 Sep), real barrier, remembered per device
 - [x] No medical or therapeutic claims anywhere. The old rosin brief on Drive carries effects and medical language; none of it is used
 - [x] No THC percentages. No prices anywhere
-- [x] No distillate livery. The raccoon appears in SOIL2OIL context only
+- [x] No distillate livery. No distillate mascot in the cast
 - [x] B2B specs ("available for customization", the compatibility list) absent
 - [x] No invented proof: the proof board is empty slots
-- [ ] The pack lid reads 21+; the brief says 18+. Confirm which is right before launch (see 08)
+- [x] 21+ everywhere: gate, footer, meta description, noscript
 
 ## Conversion path
 - [x] CTA visible from chapter 2, sticky, mobile-safe, keyboard-reachable; second CTA at camp

@@ -3,7 +3,7 @@
  * Chapters 7 (camp) and 8 (afterglow) are normal flow sections after the film.
  * Every number here is a creative decision, not plumbing — change with intent.
  */
-export type Strain = 'banana-shack' | 'permanent-marker' | 'apples-bananas'
+export type Strain = 'banana-shack' | 'permanent-marker' | 'sour-diesel'
 
 export interface CopyLine {
   id: string
@@ -39,7 +39,7 @@ export const CHAPTERS: Chapter[] = [
     title: 'Cough',
     from: 0,
     to: 0.12,
-    intent: 'Pre-dawn. Back row. The engine will not catch. The oil window in your hand is the only warm light.',
+    intent: 'Pre-dawn. Back row, right-hand drive. The engine will not catch. The oil window in your hand is the only warm light.',
     still: 0.09,
     copy: [
       { id: 'c1a', text: 'Same couch. Same night. Same nothing.', from: 0.0, to: 0.07, size: 'lead' },
@@ -75,7 +75,7 @@ export const CHAPTERS: Chapter[] = [
     intent: 'Three sightings. Each passenger handles the chaos their own way. Product in every hand. No names.',
     still: 0.55,
     copy: [
-      { id: 'c4a', text: "Hasn't blinked since the gate.", from: 0.43, to: 0.5, size: 'beat', strain: 'apples-bananas' },
+      { id: 'c4a', text: "Hasn't blinked since the gate.", from: 0.43, to: 0.5, size: 'beat', strain: 'sour-diesel' },
       { id: 'c4b', text: "Feet haven't touched the floor.", from: 0.51, to: 0.58, size: 'beat', strain: 'permanent-marker' },
       { id: 'c4c', text: "Hasn't looked at the road once.", from: 0.59, to: 0.67, size: 'beat', strain: 'banana-shack' },
     ],
@@ -103,7 +103,7 @@ export const CHAPTERS: Chapter[] = [
 ]
 
 export const SIGHTINGS: { strain: Strain; from: number; to: number }[] = [
-  { strain: 'apples-bananas', from: 0.42, to: 0.5 },
+  { strain: 'sour-diesel', from: 0.42, to: 0.5 },
   { strain: 'permanent-marker', from: 0.5, to: 0.58 },
   { strain: 'banana-shack', from: 0.58, to: 0.68 },
 ]
@@ -129,13 +129,13 @@ export const CAST = [
     note: 'Vaulted in at the riverbed. Feet have not touched the floor since.',
   },
   {
-    strain: 'apples-bananas' as Strain,
-    name: 'Apples & Bananas',
-    who: 'The starer',
-    species: 'Raccoon',
+    strain: 'sour-diesel' as Strain,
+    name: 'Sour Diesel',
+    who: 'The ranger',
+    species: 'Rhino',
     device: 'black' as const,
     format: '1ml Eco-Star',
-    note: 'Has not blinked since the gate. Will not start now.',
+    note: 'Dressed for the job. Riding shotgun. Has not blinked since the gate.',
   },
 ]
 

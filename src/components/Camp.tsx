@@ -7,9 +7,9 @@ const GOLD = '#c99a2e'
 const CRIMSON = '#d8253f'
 
 /** A mascot in a camp chair, device in hand, window glowing. Pre-viz silhouette. */
-function Figure({ kind, device }: { kind: 'ape' | 'monkey' | 'raccoon' | 'empty'; device: 'black' | 'natural' }) {
-  const body = kind === 'ape' ? '#e0842a' : kind === 'monkey' ? CRIMSON : '#4a5a2a'
-  const fur = kind === 'raccoon' ? '#3b352f' : '#1a1410'
+function Figure({ kind, device }: { kind: 'ape' | 'monkey' | 'rhino' | 'empty'; device: 'black' | 'natural' }) {
+  const body = kind === 'ape' ? '#e0842a' : kind === 'monkey' ? CRIMSON : '#8a6b3c'
+  const fur = kind === 'rhino' ? '#5a5754' : '#1a1410'
   const devFill = device === 'black' ? '#141414' : '#ede4d0'
   return (
     <svg viewBox="0 0 200 220" className="h-auto w-full" role="img" aria-hidden="true">
@@ -45,12 +45,13 @@ function Figure({ kind, device }: { kind: 'ape' | 'monkey' | 'raccoon' | 'empty'
               <path d="M140 130 q30 20 10 60" stroke={fur} strokeWidth="7" fill="none" strokeLinecap="round" />
             </>
           )}
-          {kind === 'raccoon' && (
+          {kind === 'rhino' && (
             <>
-              <path d="M76 52 l-8 -22 l22 12 z M124 52 l8 -22 l-22 12 z" fill={fur} />
-              <rect x="72" y="66" width="56" height="12" rx="6" fill={INK} />
-              <circle cx="88" cy="72" r="2.5" fill="#fff" />
-              <circle cx="112" cy="72" r="2.5" fill="#fff" />
+              <path d="M112 62 l16 -30 l4 32 z" fill="#3d3a37" stroke={INK} strokeWidth="2" />
+              <path d="M62 52 q38 -22 76 0 z" fill="#8a6b3c" stroke={INK} strokeWidth="3" />
+              <rect x="58" y="50" width="84" height="7" rx="3" fill="#8a6b3c" stroke={INK} strokeWidth="2" />
+              <circle cx="90" cy="72" r="2.5" fill="#fff" />
+              <circle cx="108" cy="72" r="2.5" fill="#fff" />
             </>
           )}
           {/* hand + device */}
@@ -74,7 +75,7 @@ function Figure({ kind, device }: { kind: 'ape' | 'monkey' | 'raccoon' | 'empty'
   )
 }
 
-const KIND: Record<string, 'ape' | 'monkey' | 'raccoon'> = { 'banana-shack': 'ape', 'permanent-marker': 'monkey', 'apples-bananas': 'raccoon' }
+const KIND: Record<string, 'ape' | 'monkey' | 'rhino'> = { 'banana-shack': 'ape', 'permanent-marker': 'monkey', 'sour-diesel': 'rhino' }
 
 /**
  * Chapter 7. Camp. The only calm frame, so the CTA lands here.
@@ -137,7 +138,7 @@ export function Camp() {
           {/* PROOF. Nothing invented. Slots wait for real photographs. */}
           <div>
             <h3 className="display text-[clamp(28px,6vw,44px)] text-gold">Where it comes from</h3>
-            <p className="mt-2 text-sm text-paper/70">Real place, real people, real press. Photographs to be supplied. Nothing here is generated.</p>
+            <p className="mt-2 text-sm text-paper/70">Real place, real people, real press. Slots for real photographs if they exist. Nothing here is generated.</p>
             <ul className="mt-4 grid grid-cols-2 gap-3">
               {['The facility', 'The growers', 'The rosin press', 'The flag seal'].map((t) => (
                 <li key={t} className="flex aspect-[4/3] items-end rounded-lg border-2 border-dashed border-paper/25 p-3 text-sm text-paper/60">

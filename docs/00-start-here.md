@@ -14,7 +14,11 @@
 | 05 | `05-generation-plan.md` | Order of generation, models, per-scene specs, the negative prompt, and the asset ledger | Approve the order and the budget |
 | 06 | `06-design-system.md` | Type, palette, the CTA, the UI chrome (there is almost none) | Read |
 | 07 | `07-qa-checklist.md` | Desktop, tablet, mobile, motion, performance, accessibility, compliance, conversion path | Read |
-| 08 | `08-supply-and-overrules.md` | Everything I could not fill and did not guess. Everything I overruled and why | **Answer the SUPPLY list** |
+| 08 | `08-supply-and-overrules.md` | Everything I could not fill and did not guess. Everything I overruled and why | **Answer what is still open** |
+
+## What the animatic is, and is not
+
+The blocky silhouettes in the animatic are a proof of concept for **motion and flow only**: the scroll track, the chapter timing, the hits, the blocking, the copy zones. None of it ships. The final is a **full 3D film**: every chapter generated shot by shot in Higgsfield against the locked character sheets, the locked truck and the locked device, with every bend, bump and hit rendered, then scrubbed frame by frame by the scroll. The animatic exists so the timing can be argued about before the expensive frames are made.
 
 ## What already exists
 
@@ -24,7 +28,7 @@
 
 ## Three decisions I made that you should look at first
 
-1. **The viewer is deliberately unresolved.** The paw at golden hour is dark fur and five fingers. All three cast species have dark, hand-like hands, so the shot is honestly ambiguous. The others turn to look at you. The mirror never settles. At camp there is a fourth chair, empty, with a natural 0.5ml on the arm. The question is real, and "Find a stockist" is how you answer it. Details in 01.
+1. **The viewer is deliberately unresolved.** The paw at golden hour is dark fur and five fingers. The ape and the monkey both have dark, hand-like hands, so the shot is honestly ambiguous between them and you. The others turn to look at you. The mirror never settles. At camp there is a fourth chair, empty, with a natural 0.5ml on the arm. The question is real, and "Find a stockist" is how you answer it. Details in 01.
 2. **Proof moves from chapter 5 to camp.** The camera never leaves the vehicle, and real photographs of the facility cut into a first-person mascot drive break both the POV and the tone. They pin up at camp as real prints on the noticeboard, next to the range, where plain type belongs. Details in 08.
 3. **One rule for the comic DNA: if it is comic, it is an object.** No halftone overlays, no speech-balloon UI, no die-cut keylines on the interface. The brand is painted on the truck, printed on the packs, lettered on the signboards. Type on screen is Badaboom in the voice of a hand-painted ranger sign. The grade does the rest. Details in 01.
 

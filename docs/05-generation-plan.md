@@ -36,14 +36,14 @@ Two tensions to manage deliberately: the leaf in the fedora band and the leaf em
 
 | Scene | Objective | Camera | Subject and action | Environment | Light | Text-safe | Motion for continuity |
 |---|---|---|---|---|---|---|---|
-| 1 Cough | Plant the hand; first light is the oil | Back row, 20mm, static | Driver's hat + sunglasses in mirror; raccoon turned round staring; viewer's natural device bottom-right glowing; a pull with LED | Camp gate, dark bush | Pre-dawn steel blue, one gold source | Top 30% | Three shudders, no travel |
+| 1 Cough | Plant the hand; first light is the oil | Back row, 20mm, static, right-hand drive | Driver's hat + sunglasses in mirror (right seat); rhino ranger turned round staring (left seat); viewer's natural device bottom-right glowing; a pull with LED | Camp gate, dark bush | Pre-dawn steel blue, one gold source | Top 30% | Three shudders, no travel |
 | 2 Bad start | He should not be driving | Locked to truck | Gate post clipped, signboard spins, two switchbacks, one arm out of the window, knee on the wheel | Dawn trail, ranger board, acacias, edge of a grow row | Gold horizon, long shadows | Top 30% | Continuous travel, two leans |
 | 3 First hit | Dust swallows the frame; monkey vaults in | Locked | Riverbed washboard, jerry can bounces out, dust burst, monkey lands and grips roll bar | Riverbed, bleached banks | Hard morning, cobalt | Top 30% | Buzz, dust, landing |
-| 4a Starer | Product in hand, no reaction | Locked | Termite mound clip; raccoon pulls on black 1ml without breaking eye contact; LED | Open bush | Late morning | Top 30% | Jolt |
+| 4a Ranger | Product in hand, no reaction | Locked | Termite mound clip; the rhino ranger pulls on black 1ml without breaking eye contact; LED under the horn | Open bush | Late morning | Top 30% | Jolt |
 | 4b Clinger | Feet off the floor | Locked | Acacia branches whip the lens, dapple strobes; monkey hangs, natural device glowing | Under acacias | Noon, bleached, dapple | Top 30% | Brush |
 | 4c Driver | Has not looked at the road | Locked | Mud over lens, wipes clear; driver one-handed pull under fedora; viewer's second pull in awning shade | Mud crossing | Afternoon | Top 30% | Mud |
 | 5 Airborne | Biggest hit, best light | Locked | Corrugations, the rise, the hang, landing | Open plain, sun behind truck | Golden hour, brand palette | Top 30%, empty in the hang | Rise, hang, landing |
-| 6 Reveal | It is a paw | Locked, then still | Rim light on the hand, fur, five fingers; raccoon unchanged; monkey turns; mirror tilts, sunglasses full of sun | Same plain, dust settling | Golden hour into dusk | Top 30% for the question | None. Hold. |
+| 6 Reveal | It is a paw | Locked, then still | Rim light on the hand, fur, five fingers; rhino unchanged; monkey turns; mirror tilts, sunglasses full of sun | Same plain, dust settling | Golden hour into dusk | Top 30% for the question | None. Hold. |
 | 7 Camp | Name everything, calmly | Static wide | Four chairs, three seated, one empty with the device; packs on the table; the grow behind, backlit by fire | Camp beside the facility | Dusk, firelight | Full page, HTML | Static |
 | 8 Afterglow | One will not get out | Static | Parked truck, monkey in the back, LED on | Night, stars | One LED | Top band | Static |
 
@@ -59,6 +59,6 @@ No generation without a row. No row without a spec.
 
 Found on Drive this session (not yet uploaded to Higgsfield; the upload is the first action after sheet approval):
 
-- Pack renders: `ecostar-1ml-disp/bananashack.png`, `ecostar-0.5ml/permmarker.png`, `distill-1ml-cart/Apples-Bananas.png` (character and costume reference; the A&B livery is not used).
+- Pack renders: `ecostar-1ml-disp/bananashack.png`, `ecostar-0.5ml/permmarker.png`, `ecostar-1ml-disp/sour-diesel.png` (character and costume reference). Also reviewed for the third chair: GMO, The Church, Cheese, Grape Garcia, Nerdz, Monkey Business, Sapphire OG.
 - Logo: `Safari Smoke Logo.jpeg` (the acacia-and-sun lockup for the truck door).
 - Device and oil references: supplied by Jon in chat on 13 Sep (black front; natural front, 3/4, side, back; oil cartridge). They need to be dropped into the Drive project folder so they can be uploaded to Higgsfield as reference images for the prop and the window; chat images cannot be pulled into the generator directly.

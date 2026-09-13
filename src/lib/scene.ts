@@ -74,7 +74,7 @@ export interface SceneState {
   handPull: number
   handReveal: number
   ledViewer: boolean
-  ledRaccoon: boolean
+  ledRanger: boolean
   ledDriver: boolean
   monkeyIn: number
   jerryCan: number
@@ -83,7 +83,7 @@ export interface SceneState {
   night: number
   eyesOnYou: number
   hold: boolean
-  sighting: 'apples-bananas' | 'permanent-marker' | 'banana-shack' | null
+  sighting: 'sour-diesel' | 'permanent-marker' | 'banana-shack' | null
 }
 
 const clamp = (v: number, a = 0, b = 1) => Math.min(b, Math.max(a, v))
@@ -213,7 +213,7 @@ export function sceneAt(p: number, velocity = 0): SceneState {
   const pull = (a: number, b: number) => (p > a && p < b ? Math.sin(Math.PI * ((p - a) / (b - a))) : 0)
   const handPull = Math.max(pull(0.075, 0.115), pull(0.64, 0.685))
   const ledViewer = handPull > 0.35
-  const ledRaccoon = p > 0.445 && p < 0.485
+  const ledRanger = p > 0.445 && p < 0.485
   const ledDriver = p > 0.61 && p < 0.65
 
   const monkeyIn = p < 0.385 ? 0 : p < 0.41 ? smooth((p - 0.385) / 0.025) : 1
@@ -227,7 +227,7 @@ export function sceneAt(p: number, velocity = 0): SceneState {
 
   const sighting =
     p >= 0.42 && p < 0.5
-      ? 'apples-bananas'
+      ? 'sour-diesel'
       : p >= 0.5 && p < 0.58
         ? 'permanent-marker'
         : p >= 0.58 && p < 0.68
@@ -251,7 +251,7 @@ export function sceneAt(p: number, velocity = 0): SceneState {
     handPull,
     handReveal,
     ledViewer,
-    ledRaccoon,
+    ledRanger,
     ledDriver,
     monkeyIn,
     jerryCan,

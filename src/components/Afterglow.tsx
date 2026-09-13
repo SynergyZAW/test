@@ -49,7 +49,7 @@ export function Afterglow() {
               </div>
             </div>
             <ul className="space-y-1">
-              <li>18+ only.</li>
+              <li>21+ only.</li>
               <li>Not for medical use. No medical claims are made.</li>
               <li>Keep out of reach of children.</li>
             </ul>

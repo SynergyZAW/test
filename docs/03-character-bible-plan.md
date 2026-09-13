@@ -36,15 +36,16 @@ Each sheet: **turnaround** (front, 3/4, profile, back), **expression sheet** (si
 - **Expressions.** Mildly interested (default) · the whoop (mid-leap) · the cling · the pull · the turn (reveal) · asleep in the back row (afterglow, refuses to get out).
 - **Device.** Natural 0.5ml. Cream against red long-sleeve and dark fur.
 
-### C. Apples & Bananas — the raccoon, the starer
-- **Locked.** Olive bomber jacket printed with apples and bananas. Hands in pockets. This mascot exists only on a distillate pack; the character is used, the pack livery is not. At camp it sits in SOIL2OIL livery.
-- **Rebuild.** Compact, round, mask built as a graphic shape with two pale eyes that read at any size. The performance is a non-performance: it never breaks eye contact with the camera, from the gate to camp.
+### C. Sour Diesel — the rhino, the ranger (provisional: Jon to confirm, see 08)
+- **Locked.** The ranger's kit from the pack: khaki bush shirt with epaulettes and chest pockets, khaki shorts, wide-brim ranger hat, boots. A rhino. The one animal in the truck dressed for the job, riding shotgun while an ape drives.
+- **Rebuild.** Heavy, wide, low; the horn is the silhouette. Small eyes built as two pale points that read at any size under the hat brim. Three-toed hands (rhino) drawn honestly, which is exactly why he is ruled out at the reveal. The performance is a non-performance: he never breaks eye contact with the camera, from the gate to camp.
 - **Expressions.** The stare (default) · the stare with a pull · the stare through dust · the stare through mud · the stare at the reveal (identical, which is the joke) · the stare at camp.
-- **Device.** Black 1ml.
+- **Device.** Black 1ml (Sour Diesel ships on the 1ml Eco-Star). The LED on the draw lights the underside of the horn at dusk.
+- **Why the rhino, in one line.** A rhino ranger is the game-drive joke, it is South African, the horn is a silhouette no other seat has, and it is on a SOIL2OIL pack. Alternate if Jon prefers: the GMO panda in the orange monk's robe (five-fingered, so it would keep the reveal ambiguous three ways).
 
 ## The viewer's hand — a fourth character, deliberately underspecified
 
-A dark-furred, five-fingered hand. It must be drawable as any of the three species' hands: dark fur, dark palm, five fingers, no distinguishing marks (no raccoon rings, no ape knuckle calluses). Two states: **ambiguous** (chapters 1–5: shadow, blur, backlight, glow-lit from below) and **revealed** (chapter 6: raking gold rim, visible fur on the top edge). One sheet, hands only, both states, holding the natural 0.5ml in the draw grip.
+A dark-furred, five-fingered hand. It must be drawable as the ape's hand or the monkey's hand: dark fur, dark palm, five fingers, no distinguishing marks (no ape knuckle calluses, no monkey finger length). Two states: **ambiguous** (chapters 1–5: shadow, blur, backlight, glow-lit from below) and **revealed** (chapter 6: raking gold rim, visible fur on the top edge). One sheet, hands only, both states, holding the natural 0.5ml in the draw grip.
 
 ## The Eco-Star — locked prop, modelled once
 

@@ -3,7 +3,7 @@ import { track } from '../lib/analytics'
 import { writeAge, type AgeState } from '../lib/prefs'
 
 /**
- * A real barrier. 18+. Remembered per device (30 days on yes, this session on no).
+ * A real barrier. 21+, matching the pack. Remembered per device (30 days on yes, this session on no).
  * Full keyboard path: focus is trapped, Tab cycles the two buttons, Escape does nothing.
  */
 export function AgeGate({ state, onResolve }: { state: AgeState; onResolve: (s: AgeState) => void }) {
@@ -57,7 +57,7 @@ export function AgeGate({ state, onResolve }: { state: AgeState; onResolve: (s: 
         {!failed ? (
           <>
             <h1 id="age-title" className="display lettering text-[clamp(44px,14vw,96px)]">
-              18 or over?
+              21 or over?
             </h1>
             <p id="age-desc" className="mt-4 max-w-sm text-base leading-relaxed text-paper/85">
               Safari Smoke is for adults. South African live rosin. We remember your answer on this device.
@@ -77,7 +77,7 @@ export function AgeGate({ state, onResolve }: { state: AgeState; onResolve: (s: 
               Not yet.
             </h1>
             <p id="age-desc" className="mt-4 max-w-sm text-base leading-relaxed text-paper/85">
-              Come back when you are 18. The truck will still be here. Probably in a ditch.
+              Come back when you are 21. The truck will still be here. Probably in a ditch.
             </p>
             <a href="https://www.google.com" className="mt-8 inline-block rounded-full border-2 border-paper/40 px-6 py-3 text-paper">
               Leave
