@@ -35,3 +35,8 @@ Per your note: 9:16 is the master composition. Every scene is designed portrait 
 ## Frosty plants
 
 Yes, as set dressing, in three places where they cannot fight character consistency. Listed in 02 and 05 as their own locked asset, generated once like the device.
+
+## Links
+
+- Animatic (scroll it on your phone): https://claude.ai/code/artifact/b0c23350-5fda-4b72-914f-76118a825fe7
+- This package as a review page: https://claude.ai/code/artifact/1cd279b3-351a-4236-af91-7af13571c48c
