@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Critter</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; background: #0b0d10; color: #e8eef2; font: 16px/1.5 system-ui, sans-serif; }
+  main { max-width: 34rem; margin: 0 auto; padding: 1.5rem 1rem; }
+  h1 { font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center; }
+  #dot { font-size: .8rem; font-weight: 400; color: #8a97a3; }
+  #dot.on { color: #5fd38d; }
+  #bubble { background: #151a20; border-radius: 12px; padding: 1rem; min-height: 4.5rem; }
+  #mood { color: #6fd0ff; font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; }
+  form { display: flex; gap: .5rem; margin: 1rem 0; }
+  input { flex: 1; min-width: 0; padding: .7rem .8rem; border-radius: 10px; border: 1px solid #2a323b; background: #10141a; color: inherit; font: inherit; }
+  button { padding: .7rem 1rem; border-radius: 10px; border: 0; background: #6fd0ff; color: #05222f; font: inherit; font-weight: 600; }
+  button:disabled { opacity: .5; }
+  h2 { font-size: .85rem; color: #8a97a3; text-transform: uppercase; letter-spacing: .08em; margin-top: 2rem; }
+  ul { padding-left: 1.1rem; color: #b9c4cd; }
+</style>
+<main>
+  <h1>Critter <span id="dot">checking…</span></h1>
+  <div id="bubble"><div id="mood"></div><div id="say">Say something to wake it up.</div></div>
+  <form id="f">
+    <input id="t" placeholder="Type to your critter" autocomplete="off" maxlength="500" required>
+    <button id="b">Send</button>
+  </form>
+  <input id="k" placeholder="Token (only if you set CRITTER_TOKEN)" style="width:100%;box-sizing:border-box">
+  <h2>What it remembers</h2>
+  <ul id="facts"></ul>
+</main>
+<script>
+  const $ = (id) => document.getElementById(id);
+  let token = "";
+  try { token = localStorage.getItem("critter-token") || ""; } catch {}
+  $("k").value = token;
+  $("k").onchange = () => { token = $("k").value.trim(); try { localStorage.setItem("critter-token", token); } catch {} refresh(); };
+  const headers = () => ({ "content-type": "application/json", "x-critter-token": token });
+
+  function show(reply) {
+    if (!reply || !reply.say) return;
+    $("mood").textContent = reply.mood;
+    $("say").textContent = reply.say;
+  }
+  async function refresh() {
+    try {
+      const r = await fetch("/status", { headers: headers() });
+      if (!r.ok) throw new Error(r.status === 401 ? "token needed" : "relay error");
+      const s = await r.json();
+      $("dot").textContent = s.online ? "robot online" : "robot offline";
+      $("dot").className = s.online ? "on" : "";
+      if (!$("b").disabled) show(s.last);
+      $("facts").replaceChildren(...s.facts.map((f) => Object.assign(document.createElement("li"), { textContent: f })));
+    } catch (e) { $("dot").textContent = e.message; $("dot").className = ""; }
+  }
+  $("f").onsubmit = async (e) => {
+    e.preventDefault();
+    const text = $("t").value;
+    $("b").disabled = true; $("mood").textContent = "thinking"; $("say").textContent = "…";
+    try {
+      const r = await fetch("/say", { method: "POST", headers: headers(), body: JSON.stringify({ text }) });
+      const data = await r.json();
+      if (!r.ok) throw new Error(data.error || "failed");
+      show(data); $("t").value = "";
+    } catch (err) { $("mood").textContent = "error"; $("say").textContent = err.message; }
+    $("b").disabled = false; refresh();
+  };
+  refresh(); setInterval(refresh, 3000);
+</script>
+</html>

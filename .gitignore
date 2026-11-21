@@ -6,3 +6,8 @@ dist-ssr
 test-results
 playwright-report
 /tmp
+
+# Robot
+robot/firmware/critter/config.h
+robot/firmware/.pio
+robot/relay/memory.json
