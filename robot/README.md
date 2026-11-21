@@ -9,7 +9,7 @@ This folder is separate from the website in the rest of the repo.
 | Part | Decision |
 |---|---|
 | Size | About 480 x 320 mm, lives on the floor |
-| Frame | Bolt-together aluminium channel; 3D-printed body panels, cab and bay |
+| Frame | Bolt-together 20-series aluminium extrusion, stocked locally; 3D-printed body panels, cab and bay |
 | Drive | Six identical 100 mm wheels, one geared motor with a position sensor per wheel |
 | Head | 5.5" AMOLED touch screen and its own Raspberry Pi, on a pan-tilt neck, liftable |
 | Body brain | Raspberry Pi 5 with an AI accelerator board |
@@ -28,13 +28,15 @@ Each phase ends with something that works on its own.
 
 A talking face on wall power. No battery, no soldering.
 
-| Part | Notes | Roughly (USD) |
-|---|---|---|
-| Raspberry Pi 5, 8 GB | With the official 27 W power supply and active cooler | check current price |
-| microSD card, 64 GB or more | A2 rated | $10–15 |
-| Waveshare 5.5" HDMI AMOLED, 1080 x 1920, capacitive touch | The face | $120–180 |
-| USB speakerphone | One puck with microphone and speaker, with echo cancelling | $30–80 |
-| Raspberry Pi Camera Module 3 Wide | Plus the narrow camera cable the Pi 5 needs | $35 |
+| Part | Notes | Roughly (ZAR) | Where |
+|---|---|---|---|
+| Raspberry Pi 5, 8 GB | With the official 27 W power supply and active cooler | Listings disagree, R2,100–R4,400 for the board; check the page | PiShop, RS South Africa |
+| microSD card, 64 GB or more | A2 rated | R150–R300 | Any |
+| Waveshare 5.5" HDMI AMOLED, 1080 x 1920, capacitive touch | The face | About R4,170 | Purchpad, Communica |
+| USB speakerphone | One puck with microphone and speaker, with echo cancelling | R600–R1,500 | Any |
+| Raspberry Pi Camera Module 3 Wide | Plus the narrow camera cable the Pi 5 needs | About R830 | Bob Shop, PiShop |
+
+Prices are from South African listings and move with the exchange rate; confirm on the seller's page.
 
 The face software already exists: see "Try the face now" below.
 
