@@ -2,6 +2,7 @@
 //   critter  --POST /event-->  relay  --> Claude
 //   phone    --POST /say---->  relay  --> Claude, reply queued for the critter
 //   critter  --GET  /poll--->  relay  (picks up queued replies)
+//   face     --GET  /stream->  relay  (screen face in a browser; replies are pushed to it)
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
 import { readFileSync } from "node:fs";
 import { networkInterfaces } from "node:os";
@@ -10,6 +11,13 @@ import { react, facts, type Reply } from "./brain.ts";
 const PORT = Number(process.env.PORT ?? 8787);
 const TOKEN = process.env.CRITTER_TOKEN ?? "";
 const PAGE = readFileSync(new URL("./page.html", import.meta.url));
+const FACE = readFileSync(new URL("./face.html", import.meta.url));
+
+// Browsers showing the face keep a stream open; every reply is pushed to all of them.
+const faces = new Set<ServerResponse>();
+function broadcast(reply: Reply) {
+  for (const res of faces) res.write(`data: ${JSON.stringify(reply)}\n\n`);
+}
 
 const outbox: Reply[] = [];
 let last: Reply = { say: "", mood: "sleepy", remember: [] };
@@ -44,8 +52,21 @@ const server = createServer(async (req, res) => {
       res.writeHead(200, { "content-type": "text/html; charset=utf-8" });
       return res.end(PAGE);
     }
-    if (TOKEN && req.headers["x-critter-token"] !== TOKEN) {
+    if (req.method === "GET" && url.pathname === "/face") {
+      res.writeHead(200, { "content-type": "text/html; charset=utf-8" });
+      return res.end(FACE);
+    }
+    // The face's stream cannot send headers, so it passes the token in the address instead.
+    const given = req.headers["x-critter-token"] ?? url.searchParams.get("token") ?? "";
+    if (TOKEN && given !== TOKEN) {
       return send(res, 401, { error: "wrong or missing token" });
+    }
+    if (req.method === "GET" && url.pathname === "/stream") {
+      res.writeHead(200, { "content-type": "text/event-stream", "cache-control": "no-cache", connection: "keep-alive" });
+      res.write(": connected\n\n");
+      faces.add(res);
+      req.on("close", () => faces.delete(res));
+      return;
     }
     if (req.method === "GET" && url.pathname === "/poll") {
       lastSeen = Date.now();
@@ -60,6 +81,7 @@ const server = createServer(async (req, res) => {
       console.log(`[critter] ${String(type)}`);
       last = await react(event);
       console.log(`  -> (${last.mood}) ${last.say}`);
+      broadcast(last);
       return send(res, 200, last);
     }
     if (req.method === "POST" && url.pathname === "/say") {
@@ -69,11 +91,12 @@ const server = createServer(async (req, res) => {
       last = await react(`Your person typed to you: "${text.trim().slice(0, 500)}"`);
       console.log(`  -> (${last.mood}) ${last.say}`);
       outbox.push(last);
+      broadcast(last);
       outbox.splice(0, Math.max(0, outbox.length - 5));
       return send(res, 200, last);
     }
     if (req.method === "GET" && url.pathname === "/status") {
-      return send(res, 200, { last, facts: facts(), online: Date.now() - lastSeen < 10_000 });
+      return send(res, 200, { last, facts: facts(), online: faces.size > 0 || Date.now() - lastSeen < 10_000 });
     }
     send(res, 404, { error: "not found" });
   } catch (error) {

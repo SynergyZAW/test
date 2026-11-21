@@ -1,89 +1,77 @@
-# Desk critter
+# Critter truck
 
-A palm-sized robot with two glowing eyes. It reacts when you poke it or blow on it, and you can type to it from your phone. Claude decides what it says and how it looks, and it keeps notes on what it learns about you.
+A six-wheeled, pickup-shaped home robot. Its face is a screen at the very front, a small crane-style arm sits behind the cab, and the back is an open load bay. Claude decides what it says and does; a Raspberry Pi on board does the driving.
 
 This folder is separate from the website in the rest of the repo.
 
-```
-you / phone ──type──▶ relay (your computer) ──▶ Claude
-                        ▲   │
-              poke/puff │   ▼ what to say + which face
-                      critter (ESP32-S3 + OLED)
-```
+## The design
 
-- `firmware/` — the program that runs on the robot.
-- `relay/` — a small program on your computer that connects the robot to Claude and holds its memory.
+| Part | Decision |
+|---|---|
+| Size | About 480 x 320 mm, lives on the floor |
+| Frame | Bolt-together aluminium channel; 3D-printed body panels, cab and bay |
+| Drive | Six identical 100 mm wheels, one geared motor with a position sensor per wheel |
+| Head | 5.5" AMOLED touch screen and its own Raspberry Pi, on a pan-tilt neck, liftable |
+| Body brain | Raspberry Pi 5 with an AI accelerator board |
+| Senses | Laser scanner, depth camera, rear camera, bump skirt, stair-edge sensors |
+| Arm | Open-source printable arm with smart servos (SO-101), on a turntable behind the cab |
+| Load bay | About 300 x 250 mm, drop tailgate, accessory rails and power sockets |
+| Power | 12.8 V lithium iron phosphate pack in the frame |
+| Garage | Wall charger it reverses onto, with a spare head socket on the roof |
+| Safety | Emergency stop button, fuses, low voltage on all exposed contacts |
 
-## Shopping list (version 1: new parts, no soldering)
+## Build order
 
-| Part | What to look for | Roughly |
+Each phase ends with something that works on its own.
+
+### Phase 1: the head, on a desk
+
+A talking face on wall power. No battery, no soldering.
+
+| Part | Notes | Roughly (USD) |
 |---|---|---|
-| Brain | ESP32-S3 board with a built-in LiPo charger and battery socket. Reference: **Adafruit Feather ESP32-S3** | $18 |
-| Screen | 128x64 SSD1306 OLED, I2C. Reference: **Adafruit 0.96" OLED with STEMMA QT** | $13 |
-| Screen cable | STEMMA QT / Qwiic cable, 50–100 mm | $1 |
-| Battery | 3.7 V LiPo, 400–1200 mAh, **with protection circuit**, JST-PH 2-pin plug | $7–10 |
-| USB-C cable | Must carry data, not charge-only | — |
-| Enclosure | ABS project box with a **clear lid**, about 100 x 68 x 50 mm | $8 |
-| Poke button | 12 mm panel-mount momentary push button with wire leads | $2 |
-| Mounting | Double-sided foam tape | $3 |
+| Raspberry Pi 5, 8 GB | With the official 27 W power supply and active cooler | check current price |
+| microSD card, 64 GB or more | A2 rated | $10–15 |
+| Waveshare 5.5" HDMI AMOLED, 1080 x 1920, capacitive touch | The face | $120–180 |
+| USB speakerphone | One puck with microphone and speaker, with echo cancelling | $30–80 |
+| Raspberry Pi Camera Module 3 Wide | Plus the narrow camera cable the Pi 5 needs | $35 |
 
-Buy the battery from the same seller as the board. The plug's plus and minus are not standardised between sellers, and a reversed battery destroys the board.
+The face software already exists: see "Try the face now" below.
 
-Worth adding to the same order for the voice stage later: an INMP441 microphone, a MAX98357A amplifier, and a small 4–8 ohm speaker. These need soldering.
+### Phase 2: rolling chassis
 
-A cheaper generic ESP32-S3 dev board and a four-wire OLED also work with this firmware (build with `-e devkit_s3`); they just need jumper wires and have no battery socket.
+Frame, six motors, three dual motor controllers (RoboClaw 2x15A, about $100 each), the battery, the body's Pi, and the emergency stop. Driven from a phone. The frame parts are ordered only after the frame is drawn, because channel lengths and hole patterns have to match the motors and wheels chosen.
 
-## Build stages
+### Phase 3: sight and maps
 
-### 1. Eyes (no Wi-Fi, no battery)
+Laser scanner (RPLIDAR C1, about $70–80), depth camera, and the map of the house. Then the garage, and driving home to it.
 
-1. Plug the screen into the board with the STEMMA QT cable.
-2. Install [VS Code](https://code.visualstudio.com) and its **PlatformIO IDE** extension.
-3. Open the `robot/firmware` folder. Copy `critter/config.example.h` to `critter/config.h`.
-4. Plug the board into your computer and click **Upload** (the arrow in the bottom bar).
+### Phase 4: the arm
 
-The eyes appear, blink, and glance around. Press the board's BOOT button to tour the nine faces.
+Two SO-101 arms: one mounted on the truck, and a twin you move by hand to teach it. Kits run about $190–300 per arm, less if you print the parts yourself. Reach is about 500 mm; it lifts small objects up to about 500 g.
 
-### 2. Claude
+### Phase 5: bodywork and extras
 
-1. Get an API key from [platform.claude.com](https://platform.claude.com) and install [Node.js](https://nodejs.org) 22.18 or newer.
-2. Start the relay on your computer:
+Printed panels, the neck, working lights, the head's own battery, then bay accessories.
 
-   ```bash
-   cd robot/relay
-   npm install
-   export ANTHROPIC_API_KEY=your-key-here
-   npm start
-   ```
+## Try the face now
 
-   It prints an address such as `192.168.1.50`.
-3. Put your Wi-Fi name, password, and that address into `critter/config.h`, then upload again. The Wi-Fi must be 2.4 GHz.
-4. Open `http://<that address>:8787` on your phone and type to it.
+Needs [Node.js](https://nodejs.org) 22.18 or newer. No robot and no API key required.
 
-The BOOT button is now a poke that Claude reacts to. What it learns is saved in `relay/memory.json`.
+```bash
+cd robot/relay
+npm install
+npm run fake
+```
 
-To try the relay without a key or a robot, run `npm run fake`.
+Then open `http://localhost:8787/face` for the face and `http://localhost:8787` in a second window to type to it. Tap the face to poke it. `http://localhost:8787/face?demo` cycles through every mood.
 
-### 3. Battery
+For real replies from Claude, get an API key from [platform.claude.com](https://platform.claude.com) and run it with the key instead:
 
-Plug the battery into the board's socket. It charges whenever USB is connected.
-
-### 4. Enclosure
-
-The clear lid means the screen needs no cutout: tape it face-up against the inside of the lid. Tape the battery to the floor of the box and the board on top of it.
-
-Two holes are needed, both in the box wall:
-
-- A slot for the USB-C plug, about 12 x 7 mm, lined up with the board's socket.
-- A 12 mm round hole for the poke button, since the board's own button is now out of reach. Wire the button between any free GPIO pin and GND, and set `BUTTON_PIN` in `config.h` to that pin.
-
-The button is the one place this build needs a connection to the board's pins. Either order the board with headers already soldered and use push-on jumper wires, or solder the two wires.
-
-### 5. Later
-
-- Puff sensor: set `PUFF_PIN` in `config.h`. Set `PUFF_DEBUG` to 1 first to see what your sensor reads.
-- Voice, a custom printed shell, and the rover base.
-- The eco version: salvaged vape cells behind a protection board.
+```bash
+export ANTHROPIC_API_KEY=your-key-here
+npm start
+```
 
 ## Relay settings
 
@@ -97,8 +85,13 @@ The button is the one place this build needs a connection to the board's pins. E
 
 Each poke, puff, or message is one Claude API request and is billed to your key.
 
+## What is in this folder
+
+- `relay/` — the program that connects the robot to Claude, keeps its memory, and serves the face and the phone page. It will move onto the truck's Pi.
+- `firmware/` — an earlier small-screen prototype for an ESP32 board with a tiny OLED. Not part of the truck; kept for reference.
+
 ## Battery safety
 
-- Use only cells with a protection circuit.
+- Use only packs with a built-in protection board, and a charger made for that battery type.
+- Fit a fuse next to the battery before anything else is connected.
 - Never charge a cell that is puffy, dented, or punctured.
-- Charge on a hard, non-flammable surface, and not unattended while you are still getting to know the build.
