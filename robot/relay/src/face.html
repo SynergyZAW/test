@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Critter face</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; touch-action: none; cursor: none; }
+  canvas { display: block; width: 100vw; height: 100vh; }
+  #say {
+    position: fixed; left: 6vw; right: 6vw; bottom: 7vh; text-align: center;
+    color: #ffb84d; font: 500 5.2vmin/1.25 ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    text-shadow: 0 0 2vmin rgba(255, 184, 77, .45); transition: opacity .4s; opacity: 0;
+  }
+  #say.on { opacity: 1; }
+</style>
+<canvas id="c"></canvas>
+<div id="say"></div>
+<script>
+  // The face. Runs full screen on the head's display; also opens in any browser for testing.
+  // Add ?token=... if the relay has CRITTER_TOKEN set, and ?demo to cycle moods with no relay.
+  const params = new URLSearchParams(location.search);
+  const token = params.get("token") || "";
+  const canvas = document.getElementById("c"), ctx = canvas.getContext("2d"), sayEl = document.getElementById("say");
+  const COLOR = "#ffb84d";
+
+  // Each mood is a target eye shape: width and height as fractions of the screen's short side,
+  // plus cuts that carve the expression out of the basic rounded eye.
+  const MOODS = {
+    neutral:   { w: .20, h: .26 },
+    happy:     { w: .21, h: .24, cut: "smile" },
+    sad:       { w: .19, h: .22, cut: "droop" },
+    angry:     { w: .20, h: .20, cut: "scowl" },
+    surprised: { w: .23, h: .33 },
+    sleepy:    { w: .21, h: .05, dy: .04 },
+    curious:   { w: .20, h: .26, left: .72 },
+    love:      { w: .22, h: .24, heart: true },
+    thinking:  { w: .15, h: .17, dx: .06, dy: -.07 },
+  };
+  let mood = "neutral", moodUntil = 0, sayUntil = 0;
+  const cur = { w: .20, h: .26, dx: 0, dy: 0, left: 1 };   // what is drawn now, eased toward the mood
+  let look = { x: 0, y: 0 }, lookTarget = { x: 0, y: 0 }, nextGlance = 0, nextBlink = 2000, blinkUntil = 0;
+
+  function show(reply) {
+    if (!reply) return;
+    mood = MOODS[reply.mood] ? reply.mood : "neutral";
+    const text = reply.say || "";
+    sayEl.textContent = text;
+    sayEl.classList.toggle("on", !!text);
+    const hold = Math.max(5000, text.length * 90);
+    sayUntil = performance.now() + hold;
+    moodUntil = sayUntil + 2500;
+  }
+
+  function resize() {
+    const r = window.devicePixelRatio || 1;
+    canvas.width = innerWidth * r; canvas.height = innerHeight * r;
+  }
+  addEventListener("resize", resize); resize();
+
+  function drawEye(cx, cy, w, h, side, m) {
+    ctx.save();
+    ctx.fillStyle = COLOR; ctx.shadowColor = COLOR; ctx.shadowBlur = w * .35;
+    ctx.beginPath();
+    if (m.heart) {
+      const s = w * .5;
+      ctx.moveTo(cx, cy + s * .95);
+      ctx.bezierCurveTo(cx - s * 1.6, cy - s * .2, cx - s * .7, cy - s * 1.2, cx, cy - s * .4);
+      ctx.bezierCurveTo(cx + s * .7, cy - s * 1.2, cx + s * 1.6, cy - s * .2, cx, cy + s * .95);
+      ctx.fill(); ctx.restore(); return;
+    }
+    ctx.roundRect(cx - w / 2, cy - h / 2, w, h, Math.min(w, h) * .36);
+    ctx.fill();
+    ctx.shadowBlur = 0; ctx.globalCompositeOperation = "destination-out"; ctx.beginPath();
+    const top = cy - h / 2 - 2, inner = cx - side * w / 2 - side * 2, outer = cx + side * w / 2 + side * 2;
+    if (m.cut === "smile") ctx.arc(cx, cy + h * .75, w * .62, 0, Math.PI * 2);
+    if (m.cut === "droop") { ctx.moveTo(outer, top); ctx.lineTo(inner, top); ctx.lineTo(outer, cy + h * .1); }
+    if (m.cut === "scowl") { ctx.moveTo(outer, top); ctx.lineTo(inner, top); ctx.lineTo(inner, cy + h * .1); }
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function frame(now) {
+    const W = canvas.width, H = canvas.height, S = Math.min(W, H);
+    if (now > moodUntil && mood !== "neutral") mood = "neutral";
+    if (now > sayUntil) sayEl.classList.remove("on");
+    if (now > nextBlink) { blinkUntil = now + 130; nextBlink = now + 2000 + Math.random() * 4000; }
+    if (now > nextGlance) { lookTarget = { x: (Math.random() - .5) * .08, y: (Math.random() - .5) * .04 }; nextGlance = now + 1500 + Math.random() * 2500; }
+
+    const m = MOODS[mood], ease = .18;
+    cur.w += (m.w - cur.w) * ease;
+    cur.h += (((now < blinkUntil && !m.heart) ? .012 : m.h) - cur.h) * .35;
+    cur.dx += ((m.dx || 0) - cur.dx) * ease; cur.dy += ((m.dy || 0) - cur.dy) * ease;
+    cur.left += ((m.left || 1) - cur.left) * ease;
+    look.x += (lookTarget.x - look.x) * .08; look.y += (lookTarget.y - look.y) * .08;
+
+    ctx.clearRect(0, 0, W, H);
+    const talking = sayEl.classList.contains("on");
+    const cy = H * (talking ? .40 : .48) + (cur.dy + look.y) * S, gap = S * .19;
+    const cx = W / 2 + (cur.dx + look.x) * S;
+    // side = -1 for the eye on the left of the screen, +1 for the right; it says where the outer edge is.
+    drawEye(cx - gap, cy, cur.w * S, cur.h * S * cur.left, -1, m);
+    drawEye(cx + gap, cy, cur.w * S, cur.h * S, 1, m);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  // Eyes follow a finger; a tap is a poke.
+  addEventListener("pointermove", (e) => {
+    lookTarget = { x: (e.clientX / innerWidth - .5) * .12, y: (e.clientY / innerHeight - .5) * .08 };
+    nextGlance = performance.now() + 2500;
+  });
+  addEventListener("pointerdown", async () => {
+    if (params.has("demo")) return;
+    show({ say: "", mood: "thinking" }); moodUntil = performance.now() + 30000;
+    try {
+      const r = await fetch("/event", { method: "POST", headers: { "content-type": "application/json", "x-critter-token": token }, body: JSON.stringify({ type: "poke" }) });
+      if (!r.ok) show({ say: "My brain said no.", mood: "sad" });
+    } catch { show({ say: "I can't reach my brain.", mood: "sad" }); }
+  });
+
+  if (params.has("demo")) {
+    const names = Object.keys(MOODS); let i = 0;
+    const next = () => show({ say: names[i % names.length], mood: names[i++ % names.length] });
+    next(); setInterval(next, 2600);
+  } else {
+    // Replies arrive over a stream the browser reconnects by itself.
+    const stream = new EventSource("/stream?token=" + encodeURIComponent(token));
+    stream.onmessage = (e) => show(JSON.parse(e.data));
+  }
+</script>
+</html>
