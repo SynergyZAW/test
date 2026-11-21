@@ -23,6 +23,9 @@ you / phone ──type──▶ relay (your computer) ──▶ Claude
 | Screen cable | STEMMA QT / Qwiic cable, 50–100 mm | $1 |
 | Battery | 3.7 V LiPo, 400–1200 mAh, **with protection circuit**, JST-PH 2-pin plug | $7–10 |
 | USB-C cable | Must carry data, not charge-only | — |
+| Enclosure | ABS project box with a **clear lid**, about 100 x 68 x 50 mm | $8 |
+| Poke button | 12 mm panel-mount momentary push button with wire leads | $2 |
+| Mounting | Double-sided foam tape | $3 |
 
 Buy the battery from the same seller as the board. The plug's plus and minus are not standardised between sellers, and a reversed battery destroys the board.
 
@@ -65,10 +68,21 @@ To try the relay without a key or a robot, run `npm run fake`.
 
 Plug the battery into the board's socket. It charges whenever USB is connected.
 
-### 4. Later
+### 4. Enclosure
+
+The clear lid means the screen needs no cutout: tape it face-up against the inside of the lid. Tape the battery to the floor of the box and the board on top of it.
+
+Two holes are needed, both in the box wall:
+
+- A slot for the USB-C plug, about 12 x 7 mm, lined up with the board's socket.
+- A 12 mm round hole for the poke button, since the board's own button is now out of reach. Wire the button between any free GPIO pin and GND, and set `BUTTON_PIN` in `config.h` to that pin.
+
+The button is the one place this build needs a connection to the board's pins. Either order the board with headers already soldered and use push-on jumper wires, or solder the two wires.
+
+### 5. Later
 
 - Puff sensor: set `PUFF_PIN` in `config.h`. Set `PUFF_DEBUG` to 1 first to see what your sensor reads.
-- Printed shell, voice, and the rover base.
+- Voice, a custom printed shell, and the rover base.
 - The eco version: salvaged vape cells behind a protection board.
 
 ## Relay settings
