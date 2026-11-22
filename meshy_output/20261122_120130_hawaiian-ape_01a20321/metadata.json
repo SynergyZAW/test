@@ -1,0 +1,57 @@
+{
+  "schema_version": 2,
+  "project_name": "hawaiian-ape",
+  "folder": "20261122_120130_hawaiian-ape_01a20321",
+  "root_task_id": "01a20321-d73b-75de-8b36-10cfe0f0db9d",
+  "created_at": "2026-11-22T12:01:30.367Z",
+  "updated_at": "2026-11-22T12:03:23.595Z",
+  "tasks": [
+    {
+      "task_id": "01a20321-d73b-75de-8b36-10cfe0f0db9d",
+      "task_type": "multi-image-to-3d",
+      "resource": "multi-image-to-3d",
+      "endpoint": "/openapi/v1/multi-image-to-3d",
+      "stage": "build",
+      "parent_task_id": null,
+      "status": "SUCCEEDED",
+      "files": [],
+      "task_json": "task_01a20321-d73b-75de-8b36-10cfe0f0db9d.json",
+      "operation_id": null,
+      "created_at": "2026-11-22T12:03:15.609Z",
+      "updated_at": "2026-11-22T12:03:15.609Z"
+    },
+    {
+      "task_id": "01a20321-d73b-75de-8b36-10cfe0f0db9d",
+      "task_type": "multi-image-to-3d",
+      "resource": "multi-image-to-3d",
+      "endpoint": "/openapi/v1/multi-image-to-3d",
+      "stage": "preview",
+      "parent_task_id": null,
+      "status": "SUCCEEDED",
+      "files": [
+        "preview.png"
+      ],
+      "task_json": null,
+      "operation_id": null,
+      "created_at": "2026-11-22T12:03:21.234Z",
+      "updated_at": "2026-11-22T12:03:21.234Z"
+    },
+    {
+      "task_id": "01a20321-d73b-75de-8b36-10cfe0f0db9d",
+      "task_type": "multi-image-to-3d",
+      "resource": "multi-image-to-3d",
+      "endpoint": "/openapi/v1/multi-image-to-3d",
+      "stage": "delivered",
+      "parent_task_id": null,
+      "status": "SUCCEEDED",
+      "files": [
+        "hawaiian-ape.glb",
+        "hawaiian-ape.fbx"
+      ],
+      "task_json": null,
+      "operation_id": null,
+      "created_at": "2026-11-22T12:03:22.273Z",
+      "updated_at": "2026-11-22T12:03:23.595Z"
+    }
+  ]
+}
