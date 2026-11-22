@@ -4,7 +4,7 @@
   "folder": "20261122_120130_hawaiian-ape_01a20321",
   "root_task_id": "01a20321-d73b-75de-8b36-10cfe0f0db9d",
   "created_at": "2026-11-22T12:01:30.367Z",
-  "updated_at": "2026-11-22T12:03:23.595Z",
+  "updated_at": "2026-11-22T12:35:34.101Z",
   "tasks": [
     {
       "task_id": "01a20321-d73b-75de-8b36-10cfe0f0db9d",
@@ -52,6 +52,44 @@
       "operation_id": null,
       "created_at": "2026-11-22T12:03:22.273Z",
       "updated_at": "2026-11-22T12:03:23.595Z"
+    },
+    {
+      "task_id": "01a2033d-a421-7056-870b-886a5867b876",
+      "task_type": "remesh",
+      "resource": "remesh",
+      "endpoint": "/openapi/v1/remesh",
+      "stage": "remesh",
+      "parent_task_id": "01a20321-d73b-75de-8b36-10cfe0f0db9d",
+      "status": "SUCCEEDED",
+      "files": [
+        "hawaiian-ape-lowpoly.glb",
+        "hawaiian-ape-lowpoly.fbx"
+      ],
+      "task_json": "task_01a2033d-a421-7056-870b-886a5867b876.json",
+      "operation_id": "fe9745bb-def4-4182-be2f-6fa122c0c709",
+      "created_at": "2026-11-22T12:31:41.200Z",
+      "updated_at": "2026-11-22T12:34:11.878Z"
+    },
+    {
+      "task_id": "01a20340-253d-7530-8516-8f808057f5bd",
+      "task_type": "rig",
+      "resource": "rigging",
+      "endpoint": "/openapi/v1/rigging",
+      "stage": "rigging",
+      "parent_task_id": "01a2033d-a421-7056-870b-886a5867b876",
+      "status": "SUCCEEDED",
+      "files": [
+        "hawaiian-ape-rigged.glb",
+        "hawaiian-ape-rigged.fbx",
+        "hawaiian-ape-walking.glb",
+        "hawaiian-ape-walking.fbx",
+        "hawaiian-ape-running.glb",
+        "hawaiian-ape-running.fbx"
+      ],
+      "task_json": "task_01a20340-253d-7530-8516-8f808057f5bd.json",
+      "operation_id": "8c1fa17a-588e-4fa4-8bb9-6e2a7737e0db",
+      "created_at": "2026-11-22T12:34:30.088Z",
+      "updated_at": "2026-11-22T12:35:34.101Z"
     }
   ]
 }
