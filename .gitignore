@@ -6,3 +6,6 @@ dist-ssr
 test-results
 playwright-report
 /tmp
+
+# Meshy task snapshots contain signed download URLs
+meshy_output/**/task_*.json
